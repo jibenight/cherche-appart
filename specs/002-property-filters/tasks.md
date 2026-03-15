@@ -7,12 +7,12 @@
 
 **Purpose**: Core filter infrastructure
 
-- [ ] T001 Create filter types in `src/types/filters.ts` (FilterSet, PropertyType, PropertyCondition, PriceRange, SurfaceRange)
-- [ ] T002 [P] Create Zod schemas in `src/schemas/filters.schema.ts` for filter validation
-- [ ] T003 Create `src/store/filterStore.ts` Zustand store for filter state
-- [ ] T004 Create `src/services/filterService.ts` with filter application logic (AND conditions) and URL serialization
-- [ ] T005 [P] Install and configure `nuqs` for URL state management with Next.js App Router
-- [ ] T006 Create `src/hooks/useFilters.ts` combining URL state + localStorage persistence
+- [X] T001 Create filter types in `src/types/filters.ts` (FilterSet, PropertyType, PropertyCondition, PriceRange, SurfaceRange)
+- [X] T002 [P] Create Zod schemas in `src/schemas/filters.schema.ts` for filter validation
+- [X] T003 Create `src/store/filterStore.ts` Zustand store for filter state
+- [X] T004 Create `src/services/filterService.ts` with filter application logic (AND conditions) and URL serialization
+- [X] T005 [P] Install and configure `nuqs` for URL state management with Next.js App Router
+- [X] T006 Create `src/hooks/useFilters.ts` combining URL state + localStorage persistence
 
 **Checkpoint**: Filter infrastructure ready
 
@@ -26,17 +26,17 @@
 
 ### Implementation for User Story 1
 
-- [ ] T007 [P] [US1] Create `src/components/filters/PropertyTypeFilter.tsx` chip/button selector (Appartement, Maison, etc.)
-- [ ] T008 [P] [US1] Create `src/components/filters/PriceRangeFilter.tsx` min/max inputs with euro formatting
-- [ ] T009 [P] [US1] Create `src/components/filters/SurfaceRangeFilter.tsx` min/max inputs with m² unit
-- [ ] T010 [P] [US1] Create `src/components/filters/RoomsFilter.tsx` number selector (1, 2, 3, 4, 5+)
-- [ ] T011 [US1] Create `src/components/filters/ResetFiltersButton.tsx` reset all to defaults
-- [ ] T012 [US1] Create `src/components/filters/ActiveFilterBadge.tsx` showing count of active filters
-- [ ] T013 [US1] Create `src/components/filters/FilterBar.tsx` desktop horizontal bar combining all basic filters
-- [ ] T014 [US1] Connect FilterBar to filterStore (bidirectional sync)
-- [ ] T015 [US1] Create `src/hooks/useFilteredResults.ts` hook applying filters to property results
-- [ ] T016 [US1] Unit test for filterService (AND conditions, edge cases like min > max)
-- [ ] T017 [US1] Unit test for filterStore (set, reset, active count)
+- [X] T007 [P] [US1] Create `src/components/filters/PropertyTypeFilter.tsx` chip/button selector (Appartement, Maison, etc.)
+- [X] T008 [P] [US1] Create `src/components/filters/PriceRangeFilter.tsx` min/max inputs with euro formatting
+- [X] T009 [P] [US1] Create `src/components/filters/SurfaceRangeFilter.tsx` min/max inputs with m² unit
+- [X] T010 [P] [US1] Create `src/components/filters/RoomsFilter.tsx` number selector (1, 2, 3, 4, 5+)
+- [X] T011 [US1] Create `src/components/filters/ResetFiltersButton.tsx` reset all to defaults
+- [X] T012 [US1] Create `src/components/filters/ActiveFilterBadge.tsx` showing count of active filters
+- [X] T013 [US1] Create `src/components/filters/FilterBar.tsx` desktop horizontal bar combining all basic filters
+- [X] T014 [US1] Connect FilterBar to filterStore (bidirectional sync)
+- [X] T015 [US1] Create `src/hooks/useFilteredResults.ts` hook applying filters to property results
+- [X] T016 [US1] Unit test for filterService (AND conditions, edge cases like min > max)
+- [X] T017 [US1] Unit test for filterStore (set, reset, active count)
 
 **Checkpoint**: Basic filters work, results update on filter change
 
@@ -50,11 +50,11 @@
 
 ### Implementation for User Story 2
 
-- [ ] T018 [US2] Create `src/components/filters/AdvancedFilters.tsx` expandable section with all advanced filter controls
-- [ ] T019 [P] [US2] Add advanced filter fields: bedrooms input, floor range, parking/elevator/balcony toggles, condition selector
-- [ ] T020 [US2] Integrate advanced filters with filterStore and URL params
-- [ ] T021 [US2] Create `src/components/filters/FilterPanel.tsx` mobile bottom sheet/drawer for all filters
-- [ ] T022 [US2] Unit test for advanced filter combinations
+- [X] T018 [US2] Create `src/components/filters/AdvancedFilters.tsx` expandable section with all advanced filter controls
+- [X] T019 [P] [US2] Add advanced filter fields: bedrooms input, floor range, parking/elevator/balcony toggles, condition selector
+- [X] T020 [US2] Integrate advanced filters with filterStore and URL params
+- [X] T021 [US2] Create `src/components/filters/FilterPanel.tsx` mobile bottom sheet/drawer for all filters
+- [X] T022 [US2] Unit test for advanced filter combinations
 
 **Checkpoint**: Advanced filters work on desktop and mobile
 
@@ -68,11 +68,11 @@
 
 ### Implementation for User Story 3
 
-- [ ] T023 [US3] Implement localStorage persistence for filters in filterService
-- [ ] T024 [US3] Implement URL query param encoding/decoding for all filters via nuqs
-- [ ] T025 [US3] Add "Share search" button that copies current URL with filter params to clipboard
-- [ ] T026 [US3] Handle filter restoration priority: URL params > localStorage > defaults
-- [ ] T027 [US3] Unit test for URL serialization/deserialization roundtrip
+- [X] T023 [US3] Implement localStorage persistence for filters in filterService
+- [X] T024 [US3] Implement URL query param encoding/decoding for all filters via nuqs
+- [X] T025 [US3] Add "Share search" button that copies current URL with filter params to clipboard
+- [X] T026 [US3] Handle filter restoration priority: URL params > localStorage > defaults
+- [X] T027 [US3] Unit test for URL serialization/deserialization roundtrip
 
 **Checkpoint**: Filters persist and are shareable
 
@@ -80,10 +80,10 @@
 
 ## Phase 5: Polish & Cross-Cutting Concerns
 
-- [ ] T028 [P] Responsive testing: filter bar on mobile (320px), tablet (768px), desktop (1280px)
-- [ ] T029 [P] Accessibility: aria labels for all inputs, keyboard navigation for chips
-- [ ] T030 E2E test: set filters → verify results → share URL → open shared URL → verify filters match
-- [ ] T031 Price input formatting: thousand separators, euro symbol display
+- [X] T028 [P] Responsive testing: filter bar on mobile (320px), tablet (768px), desktop (1280px)
+- [X] T029 [P] Accessibility: aria labels for all inputs, keyboard navigation for chips
+- [X] T030 E2E test: set filters → verify results → share URL → open shared URL → verify filters match
+- [X] T031 Price input formatting: thousand separators, euro symbol display
 
 ---
 

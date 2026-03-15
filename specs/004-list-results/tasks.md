@@ -7,11 +7,11 @@
 
 **Purpose**: List-specific infrastructure and types
 
-- [ ] T001 Create property types in `src/types/property.ts` (PropertyCard, PropertyDetail)
-- [ ] T002 [P] Create sort types in `src/types/sort.ts` (SortOption)
-- [ ] T003 Create `src/store/resultsStore.ts` Zustand store for results state (items, sortOrder, pagination)
-- [ ] T004 [P] Create `src/hooks/useSortedResults.ts` sorting logic hook
-- [ ] T005 [P] Install `@tanstack/react-virtual` for list virtualization
+- [X] T001 Create property types in `src/types/property.ts` (PropertyCard, PropertyDetail)
+- [X] T002 [P] Create sort types in `src/types/sort.ts` (SortOption)
+- [X] T003 Create `src/store/resultsStore.ts` Zustand store for results state (items, sortOrder, pagination)
+- [X] T004 [P] Create `src/hooks/useSortedResults.ts` sorting logic hook
+- [X] T005 [P] Install `@tanstack/react-virtual` for list virtualization
 
 **Checkpoint**: List infrastructure ready
 
@@ -25,14 +25,14 @@
 
 ### Implementation for User Story 1
 
-- [ ] T006 [P] [US1] Create `src/components/results/PropertyCard.tsx` card with thumbnail, price, surface, rooms, city, source
-- [ ] T007 [P] [US1] Create `src/components/results/PropertyCardSkeleton.tsx` loading skeleton
-- [ ] T008 [US1] Create `src/components/results/ResultsList.tsx` scrollable list container with virtualization
-- [ ] T009 [US1] Create `src/hooks/useInfiniteScroll.ts` infinite scroll / "Load more" hook
-- [ ] T010 [US1] Connect ResultsList to resultsStore (render cards from search results)
-- [ ] T011 [US1] Create `src/components/results/EmptyState.tsx` no-results message with filter relaxation suggestions
-- [ ] T012 [US1] Lazy load images in PropertyCard using Next.js Image component
-- [ ] T013 [US1] Unit test for resultsStore (pagination, data loading)
+- [X] T006 [P] [US1] Create `src/components/results/PropertyCard.tsx` card with thumbnail, price, surface, rooms, city, source
+- [X] T007 [P] [US1] Create `src/components/results/PropertyCardSkeleton.tsx` loading skeleton
+- [X] T008 [US1] Create `src/components/results/ResultsList.tsx` scrollable list container with virtualization
+- [X] T009 [US1] Create `src/hooks/useInfiniteScroll.ts` infinite scroll / "Load more" hook
+- [X] T010 [US1] Connect ResultsList to resultsStore (render cards from search results)
+- [X] T011 [US1] Create `src/components/results/EmptyState.tsx` no-results message with filter relaxation suggestions
+- [X] T012 [US1] Lazy load images in PropertyCard using Next.js Image component
+- [X] T013 [US1] Unit test for resultsStore (pagination, data loading)
 
 **Checkpoint**: Property cards list works with infinite scroll
 
@@ -46,11 +46,11 @@
 
 ### Implementation for User Story 2
 
-- [ ] T014 [US2] Create `src/components/results/SortBar.tsx` with sort dropdown and result count display
-- [ ] T015 [US2] Implement sort logic in useSortedResults: price_asc, price_desc, surface_asc, surface_desc, date_desc, relevance
-- [ ] T016 [US2] Connect SortBar to resultsStore (update sortOrder, trigger re-sort)
-- [ ] T017 [US2] Style result count: "142 biens trouvés" with filter context
-- [ ] T018 [US2] Unit test for sorting (verify order for each sort option)
+- [X] T014 [US2] Create `src/components/results/SortBar.tsx` with sort dropdown and result count display
+- [X] T015 [US2] Implement sort logic in useSortedResults: price_asc, price_desc, surface_asc, surface_desc, date_desc, relevance
+- [X] T016 [US2] Connect SortBar to resultsStore (update sortOrder, trigger re-sort)
+- [X] T017 [US2] Style result count: "142 biens trouvés" with filter context
+- [X] T018 [US2] Unit test for sorting (verify order for each sort option)
 
 **Checkpoint**: Sorting and result count work
 
@@ -64,15 +64,15 @@
 
 ### Implementation for User Story 3
 
-- [ ] T019 [US3] Create `src/app/property/[id]/page.tsx` dynamic route for property detail
-- [ ] T020 [US3] Create `src/components/property/PropertyDetail.tsx` full detail layout
-- [ ] T021 [US3] Create `src/components/property/PhotoGallery.tsx` carousel with lightbox and swipe
-- [ ] T022 [US3] Create `src/components/property/PropertyCharacteristics.tsx` attributes table
-- [ ] T023 [US3] Create `src/components/property/EnergyRating.tsx` DPE/GES colored scale display
-- [ ] T024 [US3] Create `src/components/property/MiniMap.tsx` small Leaflet map showing property location
-- [ ] T025 [US3] Create `src/hooks/useScrollRestore.ts` preserve scroll position on back navigation
-- [ ] T026 [US3] Connect detail page to data source (fetch property by ID)
-- [ ] T027 [US3] Handle missing data gracefully: placeholder photo, "N/A" for missing fields
+- [X] T019 [US3] Create `src/app/property/[id]/page.tsx` dynamic route for property detail
+- [X] T020 [US3] Create `src/components/property/PropertyDetail.tsx` full detail layout
+- [X] T021 [US3] Create `src/components/property/PhotoGallery.tsx` carousel with lightbox and swipe
+- [X] T022 [US3] Create `src/components/property/PropertyCharacteristics.tsx` attributes table
+- [X] T023 [US3] Create `src/components/property/EnergyRating.tsx` DPE/GES colored scale display
+- [X] T024 [US3] Create `src/components/property/MiniMap.tsx` small Leaflet map showing property location
+- [X] T025 [US3] Create `src/hooks/useScrollRestore.ts` preserve scroll position on back navigation
+- [X] T026 [US3] Connect detail page to data source (fetch property by ID)
+- [X] T027 [US3] Handle missing data gracefully: placeholder photo, "N/A" for missing fields
 
 **Checkpoint**: Property detail page with photo gallery works
 
@@ -86,11 +86,11 @@
 
 ### Implementation for User Story 4
 
-- [ ] T028 [US4] Create `src/components/layout/SplitView.tsx` side-by-side layout for desktop (>768px)
-- [ ] T029 [US4] Create `src/components/results/ViewToggle.tsx` map/list toggle button for mobile
-- [ ] T030 [US4] Implement responsive breakpoint logic: single view on mobile, split on desktop
-- [ ] T031 [US4] Ensure both views share the same results data and filter state
-- [ ] T032 [US4] E2E test: verify toggle on mobile viewport, verify split on desktop viewport
+- [X] T028 [US4] Create `src/components/layout/SplitView.tsx` side-by-side layout for desktop (>768px)
+- [X] T029 [US4] Create `src/components/results/ViewToggle.tsx` map/list toggle button for mobile
+- [X] T030 [US4] Implement responsive breakpoint logic: single view on mobile, split on desktop
+- [X] T031 [US4] Ensure both views share the same results data and filter state
+- [X] T032 [US4] E2E test: verify toggle on mobile viewport, verify split on desktop viewport
 
 **Checkpoint**: Responsive layout works across all breakpoints
 
@@ -98,10 +98,10 @@
 
 ## Phase 6: Polish & Cross-Cutting Concerns
 
-- [ ] T033 [P] Image optimization: WebP format, blur placeholders
-- [ ] T034 [P] Accessibility: card keyboard navigation, lightbox keyboard controls, aria labels
-- [ ] T035 E2E test: search → browse list → click card → detail → back → scroll restored
-- [ ] T036 Performance: verify 60fps scrolling with 100+ cards (virtualization)
+- [X] T033 [P] Image optimization: WebP format, blur placeholders
+- [X] T034 [P] Accessibility: card keyboard navigation, lightbox keyboard controls, aria labels
+- [X] T035 E2E test: search → browse list → click card → detail → back → scroll restored
+- [X] T036 Performance: verify 60fps scrolling with 100+ cards (virtualization)
 
 ---
 

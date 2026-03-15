@@ -98,7 +98,7 @@
 - [X] T034 [P] Add loading skeletons for map and search components
 - [X] T035 [P] Add error boundary for map component (fallback if tiles fail)
 - [X] T036 Responsive layout testing: verify mobile (320px), tablet (768px), desktop (1280px)
-- [ ] T037 E2E test: full location search flow (type city → select → set radius → verify map)
+- [X] T037 E2E test: full location search flow (type city → select → set radius → verify map)
 - [X] T038 Accessibility: keyboard navigation for autocomplete, aria labels for slider and map
 
 ---

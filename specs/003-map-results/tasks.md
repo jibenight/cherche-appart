@@ -7,10 +7,10 @@
 
 **Purpose**: Map-specific infrastructure and types
 
-- [ ] T001 Create map types in `src/types/map.ts` (MapMarker, MarkerCluster, MapPopup, MapViewport)
-- [ ] T002 Create `src/store/mapStore.ts` Zustand store for map state (viewport, hoveredMarkerId, searchAsIMove)
-- [ ] T003 Install `leaflet.markercluster` and its React wrapper, add TypeScript declarations
-- [ ] T004 [P] Create `src/hooks/useMapViewport.ts` to track current map bounds
+- [X] T001 Create map types in `src/types/map.ts` (MapMarker, MarkerCluster, MapPopup, MapViewport)
+- [X] T002 Create `src/store/mapStore.ts` Zustand store for map state (viewport, hoveredMarkerId, searchAsIMove)
+- [X] T003 Install `leaflet.markercluster` and its React wrapper, add TypeScript declarations
+- [X] T004 [P] Create `src/hooks/useMapViewport.ts` to track current map bounds
 
 **Checkpoint**: Map infrastructure ready
 
@@ -24,13 +24,13 @@
 
 ### Implementation for User Story 1
 
-- [ ] T005 [US1] Create `src/components/map/PropertyMarker.tsx` custom DivIcon marker with price label badge
-- [ ] T006 [US1] Create `src/components/map/MarkerPopup.tsx` popup card (thumbnail, price, surface, rooms, "See details" link)
-- [ ] T007 [US1] Create `src/components/map/PropertyMarkers.tsx` layer rendering all markers from search results
-- [ ] T008 [US1] Integrate markercluster plugin into PropertyMarkers for automatic clustering
-- [ ] T009 [US1] Style price label badges with Tailwind: pill shape, white bg, shadow, responsive font size
-- [ ] T010 [US1] Connect PropertyMarkers to search results store (render markers from results data)
-- [ ] T011 [US1] Unit test for marker data transformation (property → MapMarker)
+- [X] T005 [US1] Create `src/components/map/PropertyMarker.tsx` custom DivIcon marker with price label badge
+- [X] T006 [US1] Create `src/components/map/MarkerPopup.tsx` popup card (thumbnail, price, surface, rooms, "See details" link)
+- [X] T007 [US1] Create `src/components/map/PropertyMarkers.tsx` layer rendering all markers from search results
+- [X] T008 [US1] Integrate markercluster plugin into PropertyMarkers for automatic clustering
+- [X] T009 [US1] Style price label badges with Tailwind: pill shape, white bg, shadow, responsive font size
+- [X] T010 [US1] Connect PropertyMarkers to search results store (render markers from results data)
+- [X] T011 [US1] Unit test for marker data transformation (property → MapMarker)
 
 **Checkpoint**: Markers with prices appear on map, clicking shows popup
 
@@ -44,13 +44,13 @@
 
 ### Implementation for User Story 2
 
-- [ ] T012 [US2] Enhance MapContainer with pan/zoom event handlers updating mapStore viewport
-- [ ] T013 [US2] Ensure SearchCircle (from 001) remains correctly positioned during pan/zoom
-- [ ] T014 [US2] Create `src/components/map/SearchAsIMove.tsx` toggle checkbox/switch
-- [ ] T015 [US2] Implement "search as I move" logic: detect viewport change → trigger new search for visible bounds
-- [ ] T016 [US2] Create `src/components/map/MapControls.tsx` zoom buttons + fullscreen toggle
-- [ ] T017 [US2] Optimize map rendering: use canvas renderer for >100 markers
-- [ ] T018 [US2] Touch support: verify pinch-zoom and touch-drag work on mobile
+- [X] T012 [US2] Enhance MapContainer with pan/zoom event handlers updating mapStore viewport
+- [X] T013 [US2] Ensure SearchCircle (from 001) remains correctly positioned during pan/zoom
+- [X] T014 [US2] Create `src/components/map/SearchAsIMove.tsx` toggle checkbox/switch
+- [X] T015 [US2] Implement "search as I move" logic: detect viewport change → trigger new search for visible bounds
+- [X] T016 [US2] Create `src/components/map/MapControls.tsx` zoom buttons + fullscreen toggle
+- [X] T017 [US2] Optimize map rendering: use canvas renderer for >100 markers
+- [X] T018 [US2] Touch support: verify pinch-zoom and touch-drag work on mobile
 
 **Checkpoint**: Map is fully interactive with search-as-I-move
 
@@ -64,11 +64,11 @@
 
 ### Implementation for User Story 3
 
-- [ ] T019 [US3] Create `src/hooks/useMapSync.ts` bidirectional sync hook (hoveredPropertyId shared between map and list)
-- [ ] T020 [US3] Add hover handlers to PropertyMarker: on mouseenter → set hoveredPropertyId in mapStore
-- [ ] T021 [US3] Add highlight style to PropertyMarker when it matches hoveredPropertyId (enlarge, border change)
-- [ ] T022 [US3] Connect list view PropertyCard to mapStore: highlight on match, scroll into view on marker click
-- [ ] T023 [US3] Unit test for useMapSync hook
+- [X] T019 [US3] Create `src/hooks/useMapSync.ts` bidirectional sync hook (hoveredPropertyId shared between map and list)
+- [X] T020 [US3] Add hover handlers to PropertyMarker: on mouseenter → set hoveredPropertyId in mapStore
+- [X] T021 [US3] Add highlight style to PropertyMarker when it matches hoveredPropertyId (enlarge, border change)
+- [X] T022 [US3] Connect list view PropertyCard to mapStore: highlight on match, scroll into view on marker click
+- [X] T023 [US3] Unit test for useMapSync hook
 
 **Checkpoint**: Map and list are synchronized on hover/click
 
@@ -76,11 +76,11 @@
 
 ## Phase 5: Polish & Cross-Cutting Concerns
 
-- [ ] T024 [P] Add map loading skeleton while tiles load
-- [ ] T025 [P] Handle map tile server failure: show fallback message with list-only option
-- [ ] T026 Responsive testing: map on mobile (full width), tablet, desktop (split with list)
-- [ ] T027 E2E test: search → markers appear → click popup → verify info → cluster/uncluster on zoom
-- [ ] T028 Performance test: verify 30fps with 200+ markers during pan
+- [X] T024 [P] Add map loading skeleton while tiles load
+- [X] T025 [P] Handle map tile server failure: show fallback message with list-only option
+- [X] T026 Responsive testing: map on mobile (full width), tablet, desktop (split with list)
+- [X] T027 E2E test: search → markers appear → click popup → verify info → cluster/uncluster on zoom
+- [X] T028 Performance test: verify 30fps with 200+ markers during pan
 
 ---
 
