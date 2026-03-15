@@ -21,16 +21,18 @@ export function RadiusSlider() {
 
   return (
     <div className="w-full">
-      <div className="mb-2 flex items-center justify-between">
+      <div className="mb-3 flex items-center justify-between">
         <label
           htmlFor="radius-slider"
-          className="text-sm font-medium text-gray-700"
+          className="text-sm font-medium text-slate-700"
         >
           Rayon de recherche
         </label>
         <span
-          className={`text-sm font-semibold ${
-            isDisabled ? "text-gray-400" : "text-blue-600"
+          className={`rounded-lg px-2.5 py-1 text-sm font-semibold ${
+            isDisabled
+              ? "bg-slate-100 text-slate-400"
+              : "bg-brand-50 text-brand-700"
           }`}
         >
           {radiusKm} km
@@ -47,11 +49,7 @@ export function RadiusSlider() {
           value={radiusKm}
           onChange={handleChange}
           disabled={isDisabled}
-          className={`w-full cursor-pointer appearance-none rounded-lg h-2 ${
-            isDisabled
-              ? "bg-gray-200 cursor-not-allowed"
-              : "bg-gradient-to-r from-blue-200 to-blue-500"
-          } [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-blue-600 [&::-webkit-slider-thumb]:shadow-md [&::-webkit-slider-thumb]:transition-transform [&::-webkit-slider-thumb]:hover:scale-110 [&::-moz-range-thumb]:h-5 [&::-moz-range-thumb]:w-5 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-0 [&::-moz-range-thumb]:bg-blue-600 [&::-moz-range-thumb]:shadow-md`}
+          className="w-full"
           aria-label={`Rayon de recherche: ${radiusKm} kilomètres`}
           aria-valuemin={MIN_RADIUS}
           aria-valuemax={MAX_RADIUS}
@@ -60,15 +58,18 @@ export function RadiusSlider() {
         />
 
         {/* Min/Max labels */}
-        <div className="mt-1 flex justify-between text-xs text-gray-400">
+        <div className="mt-1.5 flex justify-between text-xs text-slate-400">
           <span>{MIN_RADIUS} km</span>
           <span>{MAX_RADIUS} km</span>
         </div>
       </div>
 
       {isDisabled && (
-        <p className="mt-1 text-xs text-amber-600">
-          Sélectionnez une ville pour définir le rayon de recherche
+        <p className="mt-2 flex items-center gap-1.5 text-xs text-amber-600">
+          <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          Sélectionnez une ville pour définir le rayon
         </p>
       )}
     </div>

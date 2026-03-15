@@ -24,14 +24,16 @@ export function FavoritesList({
 }: FavoritesListProps) {
   if (favorites.length === 0) {
     return (
-      <div className="flex flex-col items-center py-12 text-center">
-        <svg className="h-16 w-16 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-        </svg>
-        <p className="mt-4 text-sm font-medium text-gray-700">
+      <div className="flex flex-col items-center py-20 text-center animate-fade-in">
+        <div className="flex h-20 w-20 items-center justify-center rounded-3xl gradient-subtle">
+          <svg className="h-10 w-10 text-brand-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+          </svg>
+        </div>
+        <p className="mt-5 text-sm font-semibold text-slate-700">
           Aucun favori enregistré
         </p>
-        <p className="mt-1 text-xs text-gray-500">
+        <p className="mt-1.5 text-xs text-slate-400">
           Ajoutez des biens en favoris pour les retrouver ici.
         </p>
       </div>
@@ -39,21 +41,21 @@ export function FavoritesList({
   }
 
   return (
-    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {favorites.map((fav) => (
-        <div key={fav.propertyId} className="relative">
+        <div key={fav.propertyId} className="relative animate-fade-in">
           {selectable && onToggleSelect && (
-            <div className="absolute left-2 top-2 z-10">
+            <div className="absolute left-3 top-3 z-10">
               <input
                 type="checkbox"
                 checked={selectedIds.includes(fav.propertyId)}
                 onChange={() => onToggleSelect(fav.propertyId)}
-                className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                className="h-5 w-5 rounded-md border-2 border-white/80 text-brand-600 shadow-sm focus:ring-brand-500"
                 aria-label={`Sélectionner ${fav.property.title} pour comparer`}
               />
             </div>
           )}
-          <div className="absolute right-2 top-2 z-10">
+          <div className="absolute right-3 top-3 z-10">
             <FavoriteButton
               isFavorited={true}
               onClick={() => onRemove(fav.propertyId)}

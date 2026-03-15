@@ -77,20 +77,20 @@ export function ComparisonTable({ properties }: ComparisonTableProps) {
     <div className="overflow-x-auto">
       <table className="w-full min-w-[400px]">
         <thead>
-          <tr className="border-b">
-            <th className="bg-gray-50 px-4 py-3 text-left text-xs font-medium text-gray-500">
+          <tr className="border-b border-slate-100">
+            <th className="bg-slate-50/80 px-5 py-4 text-left text-xs font-semibold uppercase tracking-wider text-slate-400">
               Critère
             </th>
             {properties.map((p) => (
-              <th key={p.id} className="px-4 py-3 text-center">
-                <div className="text-sm font-semibold text-gray-900 line-clamp-1">
+              <th key={p.id} className="px-5 py-4 text-center">
+                <div className="text-sm font-semibold text-slate-800 line-clamp-1">
                   {p.title}
                 </div>
                 {p.images.length > 0 && (
                   <img
                     src={p.images[0]}
                     alt={p.title}
-                    className="mx-auto mt-2 h-16 w-24 rounded object-cover"
+                    className="mx-auto mt-2.5 h-16 w-24 rounded-lg object-cover shadow-sm"
                   />
                 )}
               </th>

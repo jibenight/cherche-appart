@@ -15,7 +15,7 @@ export function SplitView({ mapView, listView }: SplitViewProps) {
   return (
     <div className="flex flex-1 flex-col">
       {/* Mobile toggle */}
-      <div className="flex justify-center p-2 lg:hidden">
+      <div className="flex justify-center p-2.5 lg:hidden">
         <ViewToggle mode={mobileView} onChange={setMobileView} />
       </div>
 
@@ -32,7 +32,7 @@ export function SplitView({ mapView, listView }: SplitViewProps) {
 
         {/* List */}
         <div
-          className={`w-full border-t bg-white lg:w-96 lg:border-l lg:border-t-0 lg:overflow-y-auto ${
+          className={`w-full border-t border-slate-200/60 bg-white lg:w-[420px] lg:border-l lg:border-t-0 lg:overflow-y-auto ${
             mobileView === "map" ? "hidden lg:block" : "flex-1"
           }`}
         >

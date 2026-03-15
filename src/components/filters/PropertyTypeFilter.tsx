@@ -16,7 +16,7 @@ export function PropertyTypeFilter() {
   const { filters, togglePropertyType } = useFilterStore();
 
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="flex flex-wrap gap-1.5">
       {PROPERTY_TYPES.map(({ value, label }) => {
         const isActive = filters.propertyTypes.includes(value);
         return (
@@ -24,10 +24,10 @@ export function PropertyTypeFilter() {
             key={value}
             type="button"
             onClick={() => togglePropertyType(value)}
-            className={`rounded-full px-3 py-1.5 text-sm font-medium transition-colors ${
+            className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-all ${
               isActive
-                ? "bg-blue-600 text-white shadow-sm"
-                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                ? "bg-brand-600 text-white shadow-sm"
+                : "bg-slate-100 text-slate-600 hover:bg-slate-200"
             }`}
             aria-pressed={isActive}
           >

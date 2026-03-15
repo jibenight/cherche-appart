@@ -13,7 +13,7 @@ export function FavoriteButton({
   size = "md",
 }: FavoriteButtonProps) {
   const sizeClasses = size === "sm" ? "h-4 w-4" : "h-5 w-5";
-  const padding = size === "sm" ? "p-1.5" : "p-2";
+  const padding = size === "sm" ? "p-2" : "p-2.5";
 
   return (
     <button
@@ -21,15 +21,15 @@ export function FavoriteButton({
         e.stopPropagation();
         onClick();
       }}
-      className={`rounded-full transition-colors ${padding} ${
+      className={`rounded-xl shadow-sm backdrop-blur-sm transition-all ${padding} ${
         isFavorited
-          ? "bg-red-50 text-red-500 hover:bg-red-100"
-          : "bg-white/80 text-gray-400 hover:bg-gray-100 hover:text-red-400"
+          ? "bg-rose-50/90 text-rose-500 hover:bg-rose-100"
+          : "bg-white/80 text-slate-400 hover:bg-white hover:text-rose-400"
       }`}
       aria-label={isFavorited ? "Retirer des favoris" : "Ajouter aux favoris"}
     >
       <svg
-        className={sizeClasses}
+        className={`${sizeClasses} transition-transform ${isFavorited ? "scale-110" : "hover:scale-110"}`}
         fill={isFavorited ? "currentColor" : "none"}
         viewBox="0 0 24 24"
         stroke="currentColor"

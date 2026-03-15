@@ -36,14 +36,14 @@ export function ResultsList({
   return (
     <div className="flex h-full flex-col">
       {/* Header: count + sort */}
-      <div className="flex items-center justify-between border-b bg-white px-4 py-3">
-        <h2 className="text-sm font-semibold text-gray-800">
-          {total} résultat{total !== 1 ? "s" : ""}
+      <div className="flex items-center justify-between border-b border-slate-100 bg-white px-4 py-3.5">
+        <h2 className="text-sm font-semibold text-slate-800">
+          <span className="text-brand-600">{total}</span> résultat{total !== 1 ? "s" : ""}
         </h2>
         <select
           value={sortBy}
           onChange={(e) => onSortChange(e.target.value as SortOption)}
-          className="rounded-lg border border-gray-300 px-2 py-1 text-xs text-gray-700 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500/20"
+          className="rounded-lg border border-slate-200 bg-slate-50/50 px-2.5 py-1.5 text-xs font-medium text-slate-600 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
           aria-label="Trier les résultats"
         >
           {SORT_OPTIONS.map((opt) => (
@@ -57,16 +57,19 @@ export function ResultsList({
       {/* Results grid */}
       <div className="flex-1 overflow-y-auto p-4">
         {isLoading ? (
-          <div className="flex items-center justify-center py-12">
-            <div className="h-8 w-8 animate-spin rounded-full border-4 border-gray-300 border-t-blue-500" />
+          <div className="flex flex-col items-center justify-center py-16">
+            <div className="h-10 w-10 animate-spin rounded-full border-3 border-slate-200 border-t-brand-500" />
+            <p className="mt-3 text-xs text-slate-400">Chargement...</p>
           </div>
         ) : properties.length === 0 ? (
-          <div className="py-12 text-center">
-            <svg className="mx-auto h-12 w-12 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-            </svg>
-            <p className="mt-2 text-sm text-gray-500">Aucun bien trouvé</p>
-            <p className="text-xs text-gray-400">
+          <div className="flex flex-col items-center py-16 text-center animate-fade-in">
+            <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-100">
+              <svg className="h-8 w-8 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              </svg>
+            </div>
+            <p className="mt-4 text-sm font-medium text-slate-700">Aucun bien trouvé</p>
+            <p className="mt-1 text-xs text-slate-400">
               Essayez d&apos;élargir vos critères de recherche
             </p>
           </div>

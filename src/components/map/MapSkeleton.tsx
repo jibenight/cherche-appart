@@ -3,13 +3,13 @@
 /** Loading skeleton displayed while map tiles load */
 export function MapSkeleton() {
   return (
-    <div className="flex h-full min-h-[300px] w-full items-center justify-center rounded-lg bg-gray-100">
+    <div className="flex h-full min-h-[300px] w-full items-center justify-center bg-slate-50">
       <div className="flex flex-col items-center gap-3">
-        <div className="relative h-12 w-12">
-          <div className="absolute inset-0 animate-ping rounded-full bg-blue-200 opacity-75" />
-          <div className="relative flex h-12 w-12 items-center justify-center rounded-full bg-blue-100">
+        <div className="relative h-14 w-14">
+          <div className="absolute inset-0 animate-ping rounded-full bg-brand-200 opacity-50" />
+          <div className="relative flex h-14 w-14 items-center justify-center rounded-full bg-brand-50">
             <svg
-              className="h-6 w-6 text-blue-500"
+              className="h-7 w-7 text-brand-500"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -23,7 +23,7 @@ export function MapSkeleton() {
             </svg>
           </div>
         </div>
-        <span className="text-sm text-gray-500">
+        <span className="text-sm text-slate-400">
           Chargement de la carte...
         </span>
       </div>

@@ -17,23 +17,23 @@ export function ComparisonSelector({
   if (selectedCount === 0) return null;
 
   return (
-    <div className="sticky bottom-0 border-t bg-white px-4 py-3 shadow-lg">
+    <div className="sticky bottom-0 border-t border-slate-200/60 glass px-5 py-4 shadow-elevated animate-slide-up">
       <div className="flex items-center justify-between">
-        <p className="text-sm text-gray-600">
-          {selectedCount} bien{selectedCount > 1 ? "s" : ""} sélectionné
+        <p className="text-sm font-medium text-slate-700">
+          <span className="text-brand-600 font-semibold">{selectedCount}</span> bien{selectedCount > 1 ? "s" : ""} sélectionné
           {selectedCount > 1 ? "s" : ""}
         </p>
-        <div className="flex gap-2">
+        <div className="flex gap-3">
           <button
             onClick={onClear}
-            className="rounded-lg border border-gray-300 px-3 py-1.5 text-sm text-gray-600 hover:bg-gray-50"
+            className="rounded-xl border border-slate-200 px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-50"
           >
             Annuler
           </button>
           <button
             onClick={onCompare}
             disabled={!canCompare}
-            className="rounded-lg bg-blue-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-50"
+            className="rounded-xl gradient-brand px-5 py-2 text-sm font-semibold text-white shadow-md hover:opacity-95 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             Comparer
           </button>

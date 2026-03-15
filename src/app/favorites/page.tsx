@@ -20,13 +20,13 @@ export default function FavoritesPage() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-slate-50">
       <Navigation />
-      <div className="mx-auto max-w-5xl px-4 py-6">
-        <div className="mb-6 flex items-center justify-between">
+      <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
+        <div className="mb-8 flex items-center justify-between">
           <div>
-            <h1 className="text-xl font-bold text-gray-900">Mes favoris</h1>
-            <p className="mt-1 text-sm text-gray-500">
+            <h1 className="text-2xl font-bold text-slate-900">Mes favoris</h1>
+            <p className="mt-1.5 text-sm text-slate-500">
               {favoritesStore.count} bien{favoritesStore.count > 1 ? "s" : ""}{" "}
               sauvegardé{favoritesStore.count > 1 ? "s" : ""}
             </p>
@@ -37,10 +37,10 @@ export default function FavoritesPage() {
                 setIsCompareMode(!isCompareMode);
                 comparison.clear();
               }}
-              className={`rounded-lg px-4 py-2 text-sm font-medium ${
+              className={`rounded-xl px-5 py-2.5 text-sm font-semibold transition-all ${
                 isCompareMode
-                  ? "bg-gray-200 text-gray-700"
-                  : "bg-blue-600 text-white hover:bg-blue-700"
+                  ? "bg-slate-200 text-slate-700"
+                  : "gradient-brand text-white shadow-md hover:opacity-95"
               }`}
             >
               {isCompareMode ? "Annuler" : "Comparer"}

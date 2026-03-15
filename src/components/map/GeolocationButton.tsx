@@ -52,10 +52,10 @@ export function GeolocationButton() {
       <button
         type="button"
         onClick={handleClick}
-        className={`inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
+        className={`inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-medium transition-all ${
           status === "loading"
-            ? "bg-gray-100 text-gray-600"
-            : "bg-blue-50 text-blue-700 hover:bg-blue-100"
+            ? "bg-slate-100 text-slate-600"
+            : "border border-brand-200 bg-brand-50 text-brand-700 hover:bg-brand-100 hover:shadow-sm"
         }`}
         aria-label={
           status === "loading"
@@ -65,9 +65,9 @@ export function GeolocationButton() {
       >
         {status === "loading" ? (
           <>
-            <div className="h-4 w-4 animate-spin rounded-full border-2 border-gray-400 border-t-blue-500" />
-            <span>Localisation en cours...</span>
-            <span className="text-xs text-gray-400">(cliquez pour annuler)</span>
+            <div className="h-4 w-4 animate-spin rounded-full border-2 border-slate-300 border-t-brand-500" />
+            <span>Localisation...</span>
+            <span className="text-xs text-slate-400">(annuler)</span>
           </>
         ) : (
           <>
@@ -91,14 +91,14 @@ export function GeolocationButton() {
                 d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
               />
             </svg>
-            <span>Utiliser ma position</span>
+            <span>Ma position</span>
           </>
         )}
       </button>
 
       {/* Error message */}
       {status === "error" && error && (
-        <p className="text-xs text-red-500" role="alert">
+        <p className="text-xs text-rose-500" role="alert">
           {error}
         </p>
       )}

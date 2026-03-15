@@ -13,19 +13,22 @@ export function ComparisonMetric({
   bestIndex,
 }: ComparisonMetricProps) {
   return (
-    <tr className="border-b border-gray-100">
-      <td className="whitespace-nowrap bg-gray-50 px-4 py-2 text-xs font-medium text-gray-600">
+    <tr className="border-b border-slate-50 last:border-0">
+      <td className="whitespace-nowrap bg-slate-50/80 px-5 py-3 text-xs font-semibold text-slate-500">
         {label}
       </td>
       {values.map((value, i) => (
         <td
           key={i}
-          className={`px-4 py-2 text-center text-sm ${
+          className={`px-5 py-3 text-center text-sm ${
             i === bestIndex
-              ? "font-bold text-green-600"
-              : "text-gray-700"
+              ? "font-bold text-emerald-600"
+              : "text-slate-700"
           }`}
         >
+          {i === bestIndex && (
+            <span className="mr-1 inline-block h-1.5 w-1.5 rounded-full bg-emerald-500" />
+          )}
           {value}
         </td>
       ))}

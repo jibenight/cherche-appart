@@ -52,15 +52,20 @@ export default function AlertsPage() {
   };
 
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-slate-50">
       <Navigation />
-      <div className="mx-auto max-w-3xl px-4 py-6">
-        <div className="mb-6 flex items-center justify-between">
-          <h1 className="text-xl font-bold text-gray-900">Mes alertes</h1>
+      <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
+        <div className="mb-8 flex items-center justify-between">
+          <div>
+            <h1 className="text-2xl font-bold text-slate-900">Mes alertes</h1>
+            <p className="mt-1.5 text-sm text-slate-500">
+              Recevez des notifications pour vos recherches
+            </p>
+          </div>
           {!showForm && (
             <button
               onClick={() => setShowForm(true)}
-              className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
+              className="rounded-xl gradient-brand px-5 py-2.5 text-sm font-semibold text-white shadow-md hover:opacity-95"
             >
               Créer une alerte
             </button>
@@ -68,7 +73,7 @@ export default function AlertsPage() {
         </div>
 
         {showForm && (
-          <div className="mb-6">
+          <div className="mb-6 animate-slide-up">
             <AlertForm
               onSubmit={handleCreate}
               onCancel={() => setShowForm(false)}

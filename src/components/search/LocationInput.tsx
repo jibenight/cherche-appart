@@ -122,7 +122,7 @@ export function LocationInput() {
       </label>
       <div className="relative">
         <svg
-          className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400"
+          className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -132,7 +132,13 @@ export function LocationInput() {
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={2}
-            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+          />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
           />
         </svg>
         <input
@@ -155,7 +161,7 @@ export function LocationInput() {
             setTimeout(() => setIsOpen(false), 200);
           }}
           placeholder="Rechercher une ville ou un code postal..."
-          className="w-full rounded-lg border border-gray-300 bg-white py-3 pl-10 pr-10 text-sm shadow-sm placeholder:text-gray-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+          className="w-full rounded-xl border border-slate-200 bg-slate-50/50 py-3.5 pl-12 pr-10 text-sm text-slate-800 shadow-sm placeholder:text-slate-400 focus:border-brand-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-500/20"
           role="combobox"
           aria-expanded={isOpen}
           aria-controls="location-suggestions"
@@ -167,7 +173,7 @@ export function LocationInput() {
         {/* Loading spinner */}
         {isLoading && (
           <div className="absolute right-10 top-1/2 -translate-y-1/2">
-            <div className="h-4 w-4 animate-spin rounded-full border-2 border-gray-300 border-t-blue-500" />
+            <div className="h-4 w-4 animate-spin rounded-full border-2 border-slate-200 border-t-brand-500" />
           </div>
         )}
         {/* Clear button */}
@@ -175,7 +181,7 @@ export function LocationInput() {
           <button
             type="button"
             onClick={handleClear}
-            className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-1 text-gray-400 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+            className="absolute right-3 top-1/2 -translate-y-1/2 rounded-lg p-1.5 text-slate-400 hover:bg-slate-100 hover:text-slate-600"
             aria-label="Effacer la recherche"
           >
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -196,7 +202,7 @@ export function LocationInput() {
           ref={listRef}
           id="location-suggestions"
           role="listbox"
-          className="absolute z-50 mt-1 w-full overflow-hidden rounded-lg border border-gray-200 bg-white shadow-lg"
+          className="absolute z-50 mt-2 w-full overflow-hidden rounded-xl border border-slate-200 bg-white shadow-elevated animate-slide-down"
         >
           {suggestions.map((suggestion, index) => (
             <li
@@ -206,8 +212,8 @@ export function LocationInput() {
               aria-selected={index === activeIndex}
               className={`cursor-pointer px-4 py-3 text-sm transition-colors ${
                 index === activeIndex
-                  ? "bg-blue-50 text-blue-700"
-                  : "text-gray-700 hover:bg-gray-50"
+                  ? "bg-brand-50 text-brand-700"
+                  : "text-slate-700 hover:bg-slate-50"
               }`}
               onMouseDown={(e) => {
                 e.preventDefault();
@@ -215,11 +221,19 @@ export function LocationInput() {
               }}
               onMouseEnter={() => setActiveIndex(index)}
             >
-              <div className="font-medium">
-                {suggestion.name}{" "}
-                <span className="text-gray-400">({suggestion.postcode})</span>
+              <div className="flex items-center gap-2.5">
+                <svg className="h-4 w-4 flex-shrink-0 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <div>
+                  <div className="font-medium">
+                    {suggestion.name}{" "}
+                    <span className="font-normal text-slate-400">({suggestion.postcode})</span>
+                  </div>
+                  <div className="text-xs text-slate-400">{suggestion.department}</div>
+                </div>
               </div>
-              <div className="text-xs text-gray-400">{suggestion.department}</div>
             </li>
           ))}
         </ul>
@@ -227,7 +241,7 @@ export function LocationInput() {
 
       {/* No results message */}
       {isOpen && !isLoading && suggestions.length === 0 && debouncedQuery.length >= 2 && (
-        <div className="absolute z-50 mt-1 w-full rounded-lg border border-gray-200 bg-white p-4 text-center text-sm text-gray-500 shadow-lg">
+        <div className="absolute z-50 mt-2 w-full rounded-xl border border-slate-200 bg-white p-4 text-center text-sm text-slate-500 shadow-elevated animate-slide-down">
           Aucun résultat trouvé pour &ldquo;{debouncedQuery}&rdquo;
         </div>
       )}
