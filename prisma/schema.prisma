@@ -1,0 +1,60 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Property {
+  id              String   @id @default(cuid())
+  sourceId        String
+  source          String
+  externalUrl     String
+  transactionType String
+  type            String
+  title           String
+  description     String   @default("")
+  price           Float
+  surface         Float
+  rooms           Int      @default(0)
+  bedrooms        Int      @default(0)
+  floor           Int?
+  totalFloors     Int?
+  hasParking      Boolean  @default(false)
+  hasElevator     Boolean  @default(false)
+  hasBalcony      Boolean  @default(false)
+  dpe             String   @default("unknown")
+  condition       String   @default("good")
+  address         String   @default("")
+  city            String
+  postcode        String
+  lat             Float
+  lng             Float
+  images          String   @default("[]")
+  pricePerM2      Float
+  publishedAt     DateTime
+  dedupHash       String
+  isActive        Boolean  @default(true)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  lastSeenAt      DateTime @default(now())
+
+  @@unique([source, sourceId])
+  @@index([lat, lng])
+  @@index([city, transactionType])
+  @@index([dedupHash])
+  @@index([isActive, publishedAt])
+}
+
+model ScrapeRun {
+  id            String    @id @default(cuid())
+  provider      String
+  startedAt     DateTime  @default(now())
+  completedAt   DateTime?
+  status        String    @default("running")
+  listingsFound Int       @default(0)
+  listingsNew   Int       @default(0)
+  errorMessage  String?
+}

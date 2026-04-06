@@ -13,6 +13,7 @@ import { Navigation } from "@/components/layout/Navigation";
 import { useSearchStore } from "@/store/searchStore";
 import { useResultsStore } from "@/store/resultsStore";
 import { useMapSync } from "@/hooks/useMapSync";
+import { usePropertySearch } from "@/hooks/usePropertySearch";
 
 export default function Home() {
   const hydrate = useSearchStore((s) => s.hydrate);
@@ -24,6 +25,8 @@ export default function Home() {
   const isLoading = useResultsStore((s) => s.isLoading);
   const { hoveredPropertyId, handlePropertyHover, handlePropertyClick } =
     useMapSync();
+
+  usePropertySearch();
 
   useEffect(() => {
     hydrate();
